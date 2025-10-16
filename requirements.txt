@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+google-generativeai
+pydantic
+pytest
+streamlit
+python-multipart
+
+
