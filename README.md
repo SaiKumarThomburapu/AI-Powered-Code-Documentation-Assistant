@@ -30,8 +30,6 @@ This project automates the creation of clear, professional code documentation us
 
 ---
 
-##  Architecture
-
 ## Architecture
 
 ```text
