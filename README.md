@@ -53,6 +53,7 @@ This project automates the creation of clear, professional code documentation us
 
 
 ### Project Structure
+
 docs-assistant/
 ├── src/
 │ ├── constants/ # Prompts and configuration
