@@ -32,22 +32,29 @@ This project automates the creation of clear, professional code documentation us
 
 ##  Architecture
 
-┌─────────────────┐ ┌──────────────────┐
-│ FastAPI Backend│ │ Streamlit UI │
-│ (Independent) │ │ (Independent) │
-├─────────────────┤ ├──────────────────┤
-│ - File Upload │ │ - File Upload │
-│ - Text Input │ │ - Text Input │
-│ - Doc Generator │ │ - Doc Generator │
-│ - File Storage │ │ - Q&A System │
-└─────────────────┘ └──────────────────┘
-│ │
-└───────────┬───────────────┘
-│
-┌───────▼────────┐
-│ Gemini AI API │
-│ (Shared) │
-└────────────────┘
+## Architecture
+
+```text
+        ┌─────────────────┐   ┌──────────────────┐
+        │ FastAPI Backend │   │   Streamlit UI   │
+        │  (Independent)  │   │   (Independent)   │
+        ├─────────────────┤   ├──────────────────┤
+        │ - File Upload   │   │ - File Upload    │
+        │ - Text Input    │   │ - Text Input     │
+        │ - Doc Generator │   │ - Doc Generator  │
+        │ - File Storage  │   │ - Q&A System     │
+        └─────────────────┘   └──────────────────┘
+                 \                   /
+                  \                 /
+                   \               /
+                    └──────┬────────┘
+                           │
+                   ┌───────▼────────┐
+                   │  Gemini AI API │
+                   │   (Shared)     │
+                   └────────────────┘
+
+
 
 
 
@@ -56,21 +63,22 @@ This project automates the creation of clear, professional code documentation us
 
 docs-assistant/
 ├── src/
-│ ├── constants/ # Prompts and configuration
-│ ├── config/ # Settings management
-│ ├── components/ # Core logic (parser, generator)
-│ ├── pipeline/ # Documentation generation pipeline
-│ └── utils/ # Helper functions
+│   ├── constants/      # Prompts and configuration
+│   ├── config/         # Settings management
+│   ├── components/     # Core logic (parser, generator)
+│   ├── pipeline/       # Documentation generation pipeline
+│   └── utils/          # Helper functions
 ├── api/
-│ └── main.py # FastAPI server (independent)
+│   └── main.py         # FastAPI server (independent)
 ├── ui/
-│ └── app.py # Streamlit app (independent)
-├── docs/ # Generated documentation files
-├── tests/ # Unit tests
-├── examples/ # Sample code files
-├── requirements.txt # Dependencies
-├── Dockerfile # Container configuration
-└── README.md # This file
+│   └── app.py          # Streamlit app (independent)
+├── docs/               # Generated documentation files
+├── tests/              # Unit tests
+├── examples/           # Sample code files
+├── requirements.txt    # Dependencies
+├── Dockerfile          # Container configuration
+└── README.md           # This file
+</details> ```
 
 
 ---
